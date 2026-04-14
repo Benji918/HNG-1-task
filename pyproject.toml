@@ -12,4 +12,5 @@ dependencies = [
     "pydantic>=2.6.4",
     "pydantic-settings>=2.2.1",
     "uuid6>=2024.1.12",
+    "uuid-utils>=0.14.1",
 ]

@@ -86,3 +86,8 @@ def delete_profile(id: str, db: Session = Depends(get_db)):
     if not success:
         return JSONResponse(status_code=404, content={"status": "error", "message": "Profile not found"})
     return Response(status_code=204)
+
+
+if __name__ == '__main__':
+    import uvicorn
+    uvicorn.run(app, host='127.0.0.1', port=8000)

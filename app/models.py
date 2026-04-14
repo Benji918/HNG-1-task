@@ -1,10 +1,10 @@
 from sqlalchemy import Column, String, Integer, Float
 from .database import Base
 from datetime import datetime, timezone
-from uuid6 import uuid7
+import uuid_utils as uuid
 
 def generate_uuid7():
-    return str(uuid7())
+    return str(uuid.uuid7())
 
 def current_time_iso():
     return datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
