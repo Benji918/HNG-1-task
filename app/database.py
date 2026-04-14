@@ -2,10 +2,11 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./profiles.db"
+SQLALCHEMY_DATABASE_URL = "postgresql://neondb_owner:npg_BsuEQC4zdk1W@ep-square-snow-adluubk6-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require"
 
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+    SQLALCHEMY_DATABASE_URL,
+    pool_pre_ping=True,
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
